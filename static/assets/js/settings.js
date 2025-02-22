@@ -171,37 +171,3 @@ function disableClickoffCloak() {
 }
 
 
-// FOR PARTICLES, ENABLING IT WILL BE DISABLING IT. IT'S THE OPPOSITE.  
-function enableParticles() {
-    localStorage.setItem('particles', 'enabled')
-    window.location.reload();
-}
-
-function disableParticles() {
-    localStorage.setItem('particles', 'disabled');
-    window.location.reload();
-}
-
-var enableccButton = document.getElementById('ecc');
-var disableccButton = document.getElementById('dcc');
-var clickoffButtonCheck = localStorage.getItem('clickoffCloak')
-if (clickoffButtonCheck === 'disabled' || clickoffButtonCheck === '' || clickoffButtonCheck === null) {
-    disableccButton.disabled = true;
-    enableccButton.disabled = false;
-} else {
-    disableccButton.disabled = false;
-    enableccButton.disabled = true;
-}
-
-// On Theme change
-const dropdown = document.getElementById('dropdown');
-dropdown.addEventListener('change', function () {
-    const selectedOptionValue = dropdown.value;     
-    localStorage.setItem('selectedOption', selectedOptionValue);
-    live();particles();
-    console.log('[✔️] Theme Updated');
-});
-const storedOptionValue = localStorage.getItem('selectedOption');
-if (storedOptionValue) {
-    dropdown.value = storedOptionValue;
-}
