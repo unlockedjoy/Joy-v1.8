@@ -1,4 +1,13 @@
-  function particles() {
+particlesJS("background", {
+  "particles": { 
+    // Configuration for particles
+  },
+  "background": {
+    "image": "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZCUawa-HlL9PPIT0n3waOdiyanYWtw1WcUA&s')"
+  }
+});
+
+function particles() {
     var p = document.getElementById("particles-js");
     if (p) {
       document.getElementById("particles-js").remove();
